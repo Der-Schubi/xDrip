@@ -2061,8 +2061,8 @@ public class BgReading extends Model implements ShareUploadableBg {
         // TODO: Should we add documentation to address possible misbehavior in case of 1-minute readings?
         if(above == false) {
             // This is a low alert, we should be going up
-            if((latest.get(0).calculated_value - latest.get(1).calculated_value > 4) ||
-               (latest.get(0).calculated_value - latest.get(2).calculated_value > 10)) {
+            if((latest.get(0).calculated_value - latest.get(1).calculated_value > 1) ||
+               (latest.get(0).calculated_value - latest.get(2).calculated_value > 2)) {
                 Log.d(TAG_ALERT, "trendingToAlertEnd returning true for low alert");
                 return true;
             }
